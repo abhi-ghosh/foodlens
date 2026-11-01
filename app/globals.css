@@ -9,6 +9,7 @@
 
   --color-brand: #059669;
   --color-brand-hover: #047857;
+  --color-darkbg: #03120d;
 
   --color-ink: #173d30;
   --color-muted: #61786c;
@@ -20,6 +21,14 @@
   --color-rating-good: #059669;
   --color-rating-moderate: #eab308;
   --color-rating-poor: #e11d48;
+}
+
+@utility squircle {
+  border-radius: 24px;
+  corner-shape: squircle;
+}
+@utility theme-transition {
+  @apply transition-colors duration-200 ease-in-out;
 }
 
 * {
@@ -52,4 +61,15 @@ select {
 
 button {
   cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
